@@ -10,9 +10,10 @@ namespace cw2.Controllers
     [Route("api/students")]
     public class StudentsController : ControllerBase
     {
-        public string GetStudent()
+        [HttpGet]
+        public string GetStudent(string orderBy)
         {
-            return "Kowalski, Malewski, Andrzejewski";
+            return $"Kowalski, Malewski, Andrzejewski sortowanie={orderBy}";
         }
 
         [HttpGet("{id}")]
